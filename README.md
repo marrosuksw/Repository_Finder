@@ -13,3 +13,15 @@
   - Lombok
   - RestAssured 5.5.5 (integration testing)
   - Gradle 
+
+#### Example request to fetch repository data:
+  GET /user/repos/marrosuksw
+##### Example JSON response:
+<img width="556" height="508" alt="obraz" src="https://github.com/user-attachments/assets/982fcf5d-94ec-4f52-856b-8231b81b3cf8" />
+
+##### Non-existent user example response:
+<img width="268" height="60" alt="obraz" src="https://github.com/user-attachments/assets/37472678-2338-47dc-a56a-4214f70abb26" />
+
+
+#### Testing
+  The integration test created in this project is a happy-path test and requires internet connection
