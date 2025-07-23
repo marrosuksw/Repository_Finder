@@ -22,9 +22,9 @@ public class ReposControllerIntegrationTest {
         RestAssured.baseURI = "http://localhost";
         RestAssured.port = port;
     }
-
+    // broad integration test testing with live connection
     @Test
-    void givenExistingGithubUser_whenRequestingUserRepositoryInformation_thenReturnUserRepositoryData() {
+    void whenRequestingUserRepositoryInformation_thenReturnUserRepositoryData() {
         //given
         String username = "marrosuksw";
         given()
@@ -33,11 +33,11 @@ public class ReposControllerIntegrationTest {
                 .then() //then
                 .statusCode(200)
                 .body("$", not(empty()))
-                .body("[0].repoName", notNullValue())
-                .body("[0].ownerLogin", equalTo(username))
-                .body("[0].branch", notNullValue())
-                .body("[0].branch[0].branchName", notNullValue())
-                .body("[0].branch[0].lastCommitSha", notNullValue())
-                .body("[0].fork", equalTo(false));
+                .body("repoName", everyItem(notNullValue()))
+                .body("ownerLogin", everyItem(equalTo(username)))
+                .body("branch", notNullValue())
+                .body("branch.branchName.flatten()", everyItem(notNullValue()))
+                .body("branch.lastCommitSha.flatten()", everyItem(notNullValue()))
+                .body("fork", everyItem(equalTo(false)));
     }
 }
