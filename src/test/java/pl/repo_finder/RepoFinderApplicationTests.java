@@ -13,22 +13,8 @@ import static io.restassured.RestAssured.given;
 @SpringBootTest
 class RepoFinderApplicationTests {
 
-	@LocalServerPort
-	private int port;
-
-	@BeforeEach
-	void setUp() {
-		RestAssured.baseURI = "http://localhost";
-		RestAssured.port = port;
-	}
-
 	@Test
-	void givenExistingGithubUser_whenFindAllRepositories_then() {
-		//given
-		String username = "marrosuksw";
-//		given().
-		//when
+	void contextLoads() {
 
-		//then
 	}
 }
