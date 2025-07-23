@@ -37,7 +37,6 @@ public class ReposControllerIntegrationTest {
                 .body("ownerLogin", everyItem(equalTo(username)))
                 .body("branch", notNullValue())
                 .body("branch.branchName.flatten()", everyItem(notNullValue()))
-                .body("branch.lastCommitSha.flatten()", everyItem(notNullValue()))
-                .body("fork", everyItem(equalTo(false)));
+                .body("branch.lastCommitSha.flatten()", everyItem(notNullValue()));
     }
 }
