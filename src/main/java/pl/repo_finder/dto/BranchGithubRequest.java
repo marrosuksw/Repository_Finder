@@ -8,12 +8,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class BranchRequest {
+public class BranchGithubRequest {
     @JsonProperty("name")
     private String name;
     @JsonProperty("commit")
     private Commit commit;
 
+    @Getter
+    @Setter
+    @AllArgsConstructor
     public static class Commit {
         @JsonProperty("sha")
         private String sha;

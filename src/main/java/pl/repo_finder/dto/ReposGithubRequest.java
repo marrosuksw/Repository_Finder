@@ -8,11 +8,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class ReposRequest {
+public class ReposGithubRequest {
     @JsonProperty("name")
     private String name;
     @JsonProperty("owner")
     private Owner owner;
+    @JsonProperty("fork")
+    private boolean fork;
 
     @Getter
     @Setter
